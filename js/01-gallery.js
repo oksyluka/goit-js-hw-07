@@ -33,12 +33,8 @@ const onImageClick = e => {
         if (e.code === 'Escape') {
           instance.close();
         }
-        return;
       });
     }
-    return;
   }
-  return;
 };
-
 galleryContainer.addEventListener('click', onImageClick);
