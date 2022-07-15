@@ -29,11 +29,13 @@ const onImageClick = e => {
     instance.show();
 
     if (basicLightbox.visible()) {
-      document.addEventListener('keydown', e => {
+      const onTargetKey = e => {
         if (e.code === 'Escape') {
           instance.close();
+          document.removeEventListener('keydown', onTargetKey);
         }
-      });
+      };
+      document.addEventListener('keydown', onTargetKey);
     }
   }
 };
